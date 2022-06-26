@@ -10,6 +10,7 @@ def merge(left: list[int], right: list[int]) -> list[int]:
     i, j = 0, 0
     s = []
 
+    # 두 리스트를 비교하여 한 리스트에 담는다.
     while i < len(left) and j < len(right):
         if left[i] > right[j]:
             s.append(right[j])
@@ -17,6 +18,8 @@ def merge(left: list[int], right: list[int]) -> list[int]:
         else:
             s.append(left[i])
             i += 1
+            
+    # 남은 원소를 담는다.
     s += left[i:]
     s += right[j:]
 
@@ -31,6 +34,7 @@ def merge_sort(lst: list[int]) -> list[int]:
     left = lst[:mid]
     right = lst[mid:]
 
+    # 재귀적으로 리스트를 계속해서 반으로 나눈다.
     return merge(merge_sort(left), merge_sort(right))
 
 
