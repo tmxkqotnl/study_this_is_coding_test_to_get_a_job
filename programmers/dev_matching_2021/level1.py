@@ -3,12 +3,11 @@
 
 
 def solution(lottos: list[int], win_nums: list[int]):
-    numbers = [0 for i in range(46)]
+    numbers = [0]*46
 
-    for i in lottos:
-        numbers[i] += 1
-    for i in win_nums:
-        numbers[i] += 1
+    for i in range(6):
+        numbers[lottos[i]] += 1
+        numbers[win_nums[i]] += 1
 
     wins = len(list(filter(lambda x: x == 2, numbers[1:])))
     zeros = numbers[0]
@@ -17,4 +16,3 @@ def solution(lottos: list[int], win_nums: list[int]):
     max_rank = 7 - wins - zeros if wins + zeros >= 2 else 6
 
     return [max_rank, minimum_rank]
-
