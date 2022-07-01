@@ -40,7 +40,3 @@ def get_range(fx: int, fy: int, tx: int, ty: int) -> list[tuple[int, int]]:
         coordinates.append((i, fy))
 
     return coordinates
-
-
-print(solution(6, 6, [[2, 2, 5, 4], [3, 3, 6, 6], [5, 1, 6, 3]]))
-
